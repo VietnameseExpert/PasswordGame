@@ -231,7 +231,6 @@ public class PasswordGame {
         HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
 
         if (response.statusCode() == 200) { // successful
-            System.out.println(response.body());
 
             ObjectMapper mapper = new ObjectMapper();
             Answer answer = mapper.readValue(response.body(), new TypeReference<Answer>() {
