@@ -15,7 +15,7 @@ public class Main {
     //    public class Car {
 //        String brand;
 //    }
-    public static boolean rule_11 (String password) { (String[] args) throws IOException, InterruptedException {
+    public static boolean rule_11 (String password) throws IOException, InterruptedException {
 
 //        gettodaydate -> yyyy-mm-dd
 
@@ -42,12 +42,8 @@ public class Main {
             Answer answer = mapper.readValue(response.body(), new TypeReference<Answer>() {
             });
 
-
-            System.out.println(answer);
-            System.out.println("Today's answer: " + answer.getAnswer());
-        } else {
-            System.out.println("Error");
+            return password.contains(answer.getAnswer());
         }
-
+        return false;
     }
 }
